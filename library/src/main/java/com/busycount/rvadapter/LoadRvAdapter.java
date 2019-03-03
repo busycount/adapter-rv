@@ -7,7 +7,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.View;
 import android.view.ViewGroup;
 
-
 import com.busycount.rvadapter.click.OnRvItemClickListener;
 import com.busycount.rvadapter.click.OnRvItemLongClickListener;
 import com.busycount.rvadapter.click.RvClickHelper;
@@ -21,7 +20,7 @@ import java.util.List;
  * <p>
  * 2018/11/19 | Count.C | Created
  */
-public abstract class BaseRvAdapter<T> extends RecyclerView.Adapter<BaseRvHolder<T>> {
+public abstract class LoadRvAdapter<T> extends RecyclerView.Adapter<BaseRvHolder<T>> {
 
     protected List<T> rvData;
 
@@ -32,7 +31,7 @@ public abstract class BaseRvAdapter<T> extends RecyclerView.Adapter<BaseRvHolder
 
     private final RvClickHelper rvClickHelper;
 
-    public BaseRvAdapter() {
+    public LoadRvAdapter() {
         rvClickHelper = new RvClickHelper();
     }
 

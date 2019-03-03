@@ -1,5 +1,6 @@
 package com.busycount.rvadapter.click;
 
+import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 
@@ -56,17 +57,14 @@ public class RvClickHelper {
     }
 
 
-    public void setupClick(BaseRvHolder holder) {
-        if (holder != null) {
-            holder.itemView.setOnClickListener(innerClickListener);
-            holder.itemView.setOnLongClickListener(innerLongClickListener);
-        }
+    public void setupClick(@NonNull BaseRvHolder holder) {
+        holder.setClick(onRvItemClickListener);
+//        holder.itemView.setOnClickListener(innerClickListener);
+//        holder.itemView.setOnLongClickListener(innerLongClickListener);
     }
 
-    public void configClick(BaseRvHolder holder, int position) {
-        if (holder != null) {
-            holder.itemView.setTag(R.id.rv_tag_holder, position);
-        }
+    public void configClick(@NonNull BaseRvHolder holder, int position) {
+        holder.itemView.setTag(R.id.rv_tag_holder, position);
     }
 
 

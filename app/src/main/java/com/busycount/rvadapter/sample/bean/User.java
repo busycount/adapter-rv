@@ -1,4 +1,4 @@
-package com.busycount.rvadapter.sample;
+package com.busycount.rvadapter.sample.bean;
 
 
 import com.busycount.rvadapter.diff.IDiffComparable;

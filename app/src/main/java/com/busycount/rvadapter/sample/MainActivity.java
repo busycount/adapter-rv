@@ -1,14 +1,13 @@
 package com.busycount.rvadapter.sample;
 
-import android.graphics.Color;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.busycount.rvadapter.divider.LineDivider;
+import com.busycount.rvadapter.sample.adpater.UserAdapter;
+import com.busycount.rvadapter.sample.bean.User;
 
 import java.util.ArrayList;
 import java.util.List;

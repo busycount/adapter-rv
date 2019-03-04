@@ -63,15 +63,14 @@ public abstract class BaseRvAdapter1<T> extends BaseRvAdapter0<T> {
         } else if (position >= footStart) {
             return ITEM_TYPE_FOOTER - position + footStart;
         } else {
-            return getExtItemViewType(position);
+            return super.getItemViewType(position);
         }
     }
 
     public void addHeaderView(View view) {
         int index = getHeaderCount();
         headerArray.put(ITEM_TYPE_HEADER - getHeaderCount(), view);
-//        notifyItemInserted(index);
-        notifyDataSetChanged();
+        notifyItemInserted(index);
     }
 
     public void addFooterView(View view) {

@@ -1,10 +1,12 @@
-package com.busycount.rvadapter.sample;
+package com.busycount.rvadapter.sample.adpater;
 
 import android.os.AsyncTask;
 import android.view.ViewGroup;
 
-import com.busycount.rvadapter.BaseRvAdapter;
 import com.busycount.rvadapter.BaseRvHolder;
+import com.busycount.rvadapter.sample.BaseRvLoadAdapter;
+import com.busycount.rvadapter.sample.bean.User;
+import com.busycount.rvadapter.sample.holder.UserHolder;
 
 import java.util.ArrayList;
 import java.util.List;

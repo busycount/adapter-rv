@@ -1,6 +1,7 @@
 package com.busycount.rvadapter;
 
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ViewGroup;
@@ -39,7 +40,7 @@ public abstract class BaseRvAdapter0<T> extends RecyclerView.Adapter<BaseRvHolde
 
     @Override
     public int getItemViewType(int position) {
-        return super.getItemViewType(position);
+        return getExtItemViewType(0);
     }
 
     public int getExtItemViewType(int position) {
@@ -105,7 +106,7 @@ public abstract class BaseRvAdapter0<T> extends RecyclerView.Adapter<BaseRvHolde
             notifyDataSetChanged();
         } else {
             if (dataIndex < 0 || dataIndex > getDataCount()) {
-                dataIndex = findDataEnd();
+                dataIndex = getDataCount();
             }
             rvData.addAll(dataIndex, data);
             dataIndex += findDataStart();
@@ -124,7 +125,7 @@ public abstract class BaseRvAdapter0<T> extends RecyclerView.Adapter<BaseRvHolde
         notifyDataSetChanged();
     }
 
-
+    @Nullable
     public final List<T> getData() {
         return rvData;
     }

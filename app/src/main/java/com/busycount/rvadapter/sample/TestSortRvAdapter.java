@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 
 
 import com.busycount.rvadapter.BaseRvHolder;
+import com.busycount.rvadapter.sample.bean.User;
+import com.busycount.rvadapter.sample.holder.UserHolder;
 
 import java.util.List;
 

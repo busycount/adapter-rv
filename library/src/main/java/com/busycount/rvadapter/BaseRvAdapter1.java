@@ -20,8 +20,8 @@ public abstract class BaseRvAdapter1<T> extends BaseRvAdapter0<T> {
 
     private final SparseArrayCompat<View> headerArray = new SparseArrayCompat<>();
     private final SparseArrayCompat<View> footerArray = new SparseArrayCompat<>();
-    private static final int ITEM_TYPE_HEADER = -10000;
-    private static final int ITEM_TYPE_FOOTER = -20000;
+    protected static final int ITEM_TYPE_HEADER = -10000;
+    protected static final int ITEM_TYPE_FOOTER = -20000;
 
 
     @Override
@@ -29,11 +29,11 @@ public abstract class BaseRvAdapter1<T> extends BaseRvAdapter0<T> {
         return super.getItemCount() + getHeaderCount() + getFooterCount();
     }
 
-    private int getHeaderCount() {
+    protected int getHeaderCount() {
         return headerArray.size();
     }
 
-    private int getFooterCount() {
+    protected int getFooterCount() {
         return footerArray.size();
     }
 
@@ -77,6 +77,11 @@ public abstract class BaseRvAdapter1<T> extends BaseRvAdapter0<T> {
         int index = getHeaderCount() + getDataCount() + getFooterCount();
         footerArray.put(ITEM_TYPE_FOOTER - getFooterCount(), view);
         notifyItemInserted(index);
+    }
+
+
+    public void remove(int position) {
+
     }
 
 

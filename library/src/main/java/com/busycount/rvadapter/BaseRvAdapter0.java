@@ -95,7 +95,7 @@ public abstract class BaseRvAdapter0<T> extends RecyclerView.Adapter<BaseRvHolde
      * 指定位置添加数据
      *
      * @param data      data
-     * @param dataIndex 位置
+     * @param dataIndex 数据位置，不包含header
      */
     public final void addData(List<T> data, int dataIndex) {
         if (IList.isEmpty(data)) {
@@ -114,6 +114,15 @@ public abstract class BaseRvAdapter0<T> extends RecyclerView.Adapter<BaseRvHolde
         }
     }
 
+    public void remove(int position) {
+        if (getDataCount() == 0) {
+            return;
+        }
+        if (isDataItem(position)) {
+            rvData.remove(position);
+            notifyItemRemoved(position);
+        }
+    }
 
     /**
      * 更新数据

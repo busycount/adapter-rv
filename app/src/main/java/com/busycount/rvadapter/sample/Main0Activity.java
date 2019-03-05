@@ -44,7 +44,7 @@ public class Main0Activity extends AppCompatActivity {
     private void configRv() {
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        adapter = new UserAdapter0(R.layout.item_empty);
+        adapter = new UserAdapter0();
         recyclerView.setAdapter(adapter);
 //        adapter.setData(getData());
 //        adapter.setOnItemClickListener(new OnRvItemClickListener() {
@@ -154,7 +154,7 @@ public class Main0Activity extends AppCompatActivity {
         TextView tv = view.findViewById(R.id.tv_header);
         tv.setText(String.valueOf(head));
         tv.setBackground(new ColorDrawable(colors[head % 5]));
-//        adapter.addHeaderView(view);
+        adapter.addHeaderView(view);
     }
 
     private void addFooter() {
@@ -162,6 +162,11 @@ public class Main0Activity extends AppCompatActivity {
         TextView tv = view.findViewById(R.id.tv_header);
         tv.setText(String.valueOf(foot));
         tv.setBackground(new ColorDrawable(colors[foot % 5]));
-//        adapter.addFooterView(view);
+        adapter.addFooterView(view);
+    }
+
+
+    private void remove() {
+        adapter.remove(getInt());
     }
 }

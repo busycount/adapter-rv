@@ -15,13 +15,6 @@ import com.busycount.rvadapter.sample.holder.UserHolder;
  */
 public class UserAdapter0 extends BaseRvAdapter2<User> {
 
-    public UserAdapter0() {
-    }
-
-    public UserAdapter0(int layoutId) {
-        super(layoutId);
-    }
-
     @Override
     public BaseRvHolder<User> onExtCreateViewHolder(ViewGroup parent, int viewType) {
         return new UserHolder(parent);
